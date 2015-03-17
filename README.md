@@ -28,7 +28,8 @@ a meteor html template.
 orion.pages.addTemplate(options, schema)
 ``` 
 
-- ```schema``` **[Schema](https://github.com/orionjs/core/tree/master/attributes)**. The schema of the template
+- ```schema``` **[Schema](https://github.com/orionjs/core/tree/master/attributes)**. The schema of the template.
+It comes with *url*, and *title*.
 
 ***Options***
 
@@ -37,3 +38,25 @@ orion.pages.addTemplate(options, schema)
 - ```name``` **String**. Optional. The visual name of the template.
 
 - ```description``` **String**. Optional. The description of the template.
+
+Example:
+
+```html
+<template name="pagesSimple">
+	<h1 class="title">{{ title }}</h1>
+	<div class="content">
+		{{{ content }}}
+	</div>
+</template>
+```
+```js
+orion.pages.addTemplate({
+	template: 'pagesSimple', 
+	name: 'Simple',
+	description: 'Simple template'
+}, {
+	content: orion.attribute('froala', {
+	  label: 'Content'
+	})
+})
+```
