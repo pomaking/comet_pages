@@ -60,3 +60,34 @@ orion.pages.addTemplate({
 	})
 })
 ```
+
+### List Pages
+
+To list pages you have to **subscribe**.
+
+```js
+// This
+orion.subs.subscribe('pages', arg1, arg2);
+// Will return this
+orion.pages.collection.find(arg1, arg2);
+```
+
+Pages comes with a built in helper for all your template that
+returns the pages (you must be subscribed first). 
+You can use it like this:
+
+```html
+<h3>All Pages</h3>
+{{# each pages }}
+  <a href="{{ path }}">
+    {{ title }}
+  </a>
+{{/ each }}
+
+<h3>Some Pages</h3>
+{{# each pages template="pagesSimple" }}
+  <a href="{{ path }}">
+    {{ title }}
+  </a>
+{{/ each }}
+```
