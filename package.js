@@ -1,8 +1,8 @@
 Package.describe({
-	name: 'orionjs:pages',
-	summary: 'Pages for Orion CMS',
+	name: 'pomaking:comet_pages',
+	summary: 'Pages for Comet CMS',
 	version: '0.0.1',
-	git: 'https://github.com/orionjs/pages'
+	git: 'https://github.com/pomaking/comet_pages'
 });
 
 Package.onUse(function(api) {
@@ -10,7 +10,6 @@ Package.onUse(function(api) {
 
 	api.use([
 		'meteor-platform',
-		'orionjs:core@0.5.3',
 		'less',
 		'aldeed:collection2@2.0.0',
 		]);
