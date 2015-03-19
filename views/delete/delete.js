@@ -1,7 +1,7 @@
-Template.adminPagesDelete.helpers({
+Template.cometDashboardPagesDelete.helpers({
 	onSuccess: function () {
 		return function (result) { 
-			Router.go('adminPagesIndex'); 
+			Router.go('cometDashboardPagesIndex'); 
 		};
 	}
 })

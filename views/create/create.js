@@ -1,8 +1,8 @@
 AutoForm.hooks({
-	adminPagesNewForm: {
+	cometDashboardPagesNewForm: {
 		before: {
 			insert: function(doc) {
-				var name = Session.get('adminPagesNew_choosenTemplate');
+				var name = Session.get('cometDashboardPagesNew_choosenTemplate');
 				if (!name) {
 					this.result(false);
 				} else {
@@ -17,23 +17,23 @@ AutoForm.hooks({
 			}
 		},
 		onSuccess: function() {
-			Router.go('adminPagesIndex');
+			Router.go('cometDashboardPagesIndex');
 		}
 	}
 });
 
 
-Template.adminPagesNew.rendered = function () {
+Template.cometDashboardPagesNew.rendered = function () {
 	if (_.keys(comet.pages.templates).length == 1) {
-		Session.set('adminPagesNew_choosenTemplate', _.keys(comet.pages.templates)[0]);
+		Session.set('cometDashboardPagesNew_choosenTemplate', _.keys(comet.pages.templates)[0]);
 	} else {
-		Session.set('adminPagesNew_choosenTemplate', null);
+		Session.set('cometDashboardPagesNew_choosenTemplate', null);
 	}
 };
 
-Template.adminPagesNew.helpers({
+Template.cometDashboardPagesNew.helpers({
 	choosenTemplate: function() {
-		var name = Session.get('adminPagesNew_choosenTemplate');
+		var name = Session.get('cometDashboardPagesNew_choosenTemplate');
 		return name && comet.pages.templates[name];
 	},
 	templates: function () {
@@ -41,18 +41,18 @@ Template.adminPagesNew.helpers({
 	}
 });
 
-Template.adminPagesNew.events({
+Template.cometDashboardPagesNew.events({
 	'click .template-choose': function () {
-		Session.set('adminPagesNew_choosenTemplate', this.template);
+		Session.set('cometDashboardPagesNew_choosenTemplate', this.template);
 	},
 	'click #cancel-btn': function () {
 		if (_.keys(comet.pages.templates).length == 1) {
 			Router.go('adminPagesIndex')
 		} else {
-			Session.set('adminPagesNew_choosenTemplate', null);
+			Session.set('cometDashboardPagesNew_choosenTemplate', null);
 		}
 	},
 	'click #submit-btn': function () {
-		$("#adminPagesNewForm").submit();
+		$("#cometDashboardPagesNewForm").submit();
 	}
 });
