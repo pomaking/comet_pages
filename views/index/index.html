@@ -1,6 +1,6 @@
-<template name="adminPagesIndex">
+<template name="cometDashboardPages">
 	<div class="admin-top-nav">
-		<a href="{{ pathFor 'adminPagesCreate' }}" class="btn btn-primary btn-sm pull-right">Create</a>
+		<a href="{{ pathFor 'cometDashboardPagesNew' }}" class="btn btn-primary btn-sm pull-right">New</a>
 		<span class="title">Pages</span>
 	</div>
 	<div class="admin-content">
@@ -32,7 +32,7 @@
 			<p>
 				<i>
 					You don't have any pages. 
-					<a href="{{ pathFor 'adminPagesCreate' }}">Create</a>
+					<a href="{{ pathFor 'adminPagesNew' }}">New Page</a>
 				</i>
 			</p>
 		{{/ if }}

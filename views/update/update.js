@@ -8,7 +8,7 @@ AutoForm.hooks({
 
 Template.adminPagesUpdate.helpers({
 	getSchema: function () {
-		return orion.pages.templates[this.template].schema;
+		return comet.pages.templates[this.template].schema;
 	}
 });
 

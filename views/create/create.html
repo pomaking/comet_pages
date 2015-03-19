@@ -1,4 +1,4 @@
-<template name="adminPagesCreate">
+<template name="cometDashboardPagesNew">
 	<div class="admin-top-nav">
 		<span class="title">
 			{{# if choosenTemplate }}
@@ -10,7 +10,7 @@
 	</div>
 	<div class="admin-content">
 		{{# if choosenTemplate }}
-			{{> quickForm collection="orion.pages.collection" schema=choosenTemplate.schema id="adminPagesCreateForm" type="insert"  buttonContent=false }}
+			{{> quickForm collection="comet.pages.collection" schema=choosenTemplate.schema id="cometPagesCreateForm" type="insert"  buttonContent=false }}
 			<br>
 			<button id="cancel-btn" class="btn btn-default">Back</button>
 			<button id="submit-btn" class="btn btn-primary">Create</button>
